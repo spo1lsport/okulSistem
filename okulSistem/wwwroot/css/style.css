@@ -14,6 +14,17 @@
  */
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap");
 
+
+#div_footer {
+    width: 100%;
+    padding: 10px 2% 10px 2%;
+    max-height: 400px;
+    background-color: #333;
+    position: absolute;
+    float: left;
+    left: 0;
+}
+
 :root {
     --bs-blue: #375a7f;
     --bs-indigo: #6610f2;
@@ -4304,6 +4315,11 @@ textarea.form-control-lg {
     flex-basis: 100%;
     flex-grow: 1;
     align-items: center;
+    float: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .navbar-toggler {
@@ -12554,3 +12570,19 @@ textarea.form-control-lg {
 .alert-dark {
     background-color: #303030;
 }
+
+@media all and (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: none;
+    }
+
+    .navbar .nav-item:hover .nav-link {
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        display: block;
+    }
+
+    .navbar .nav-item .dropdown-menu {
+        margin-top: 0;
+    }

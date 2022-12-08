@@ -9,26 +9,48 @@
     <link rel="stylesheet" href="~/okulSistem.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <header> 
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">okulSistem</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <a asp-controller="Home" asp-action="Index" class="navbar-brand" >okulSistem</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <!-- A -->
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Ders</a>
+                            <div class="dropdown-menu">
+                                <a asp-controller="Ders" asp-action="Create" class="dropdown-item">Giriş</a>
+                                <a asp-controller="Ders" asp-action="DersSayfa" class="dropdown-item">Liste</a>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <!-- B -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Öğrenci</a>
+                            <div class="dropdown-menu">
+                                <a asp-controller="Ogrenci" asp-action="Create" class="dropdown-item">Giriş</a>
+                                <a asp-controller="Ogrenci" asp-action="Index" class="dropdown-item">Liste</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Öğrenci-Ders</a>
+                            <div class="dropdown-menu">
+                                <a asp-controller="OgrenciDers" asp-action="Create" class="dropdown-item">Giriş</a>
+                                <a asp-controller="OgrenciDers" asp-action="Index" class="dropdown-item">Liste</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Yönetim</a>
+                            <div class="dropdown-menu">
+                                <a asp-controller="OkulYonetim" asp-action="Create" class="dropdown-item">Giriş</a>
+                                <a asp-controller="OkulYonetim" asp-action="Index" class="dropdown-item">Liste</a>
+                            </div>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+        
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -38,8 +60,10 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            <!-- CC -->
-        </div>
+            <div id="div_footer">
+                Okulsistem 2022 | Tüm Hakları Saklıdır.
+                </div>
+            </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
