@@ -1,0 +1,35 @@
+﻿@model Ogrenci
+
+<form method="post" asp-action="Delete">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Öğrenci Sil</h2>
+			<hr />
+		</div>
+		@*<div asp-validation-summary="All"></div>*@
+		<div class="mb-3">
+			<label asp-for="AdSoyad"></label>
+			<input asp-for="AdSoyad" disabled class="form-control" />
+		</div>
+		<div class="mb-3">
+			<label asp-for="KayitTarih"></label>
+			<input asp-for="KayitTarih" disabled class="form-control" />
+		</div>
+		<div class="mb-3">
+			<label asp-for="OgrenciNo"></label>
+			<input asp-for="OgrenciNo" disabled class="form-control" />
+		</div>
+		<div class="mb-3">
+			<label asp-for="DTarih"></label>
+			<input asp-for="DTarih" disabled class="form-control" />
+		</div>
+		<div class="mb-3">
+			<label asp-for="Bolum"></label>
+			<input asp-for="Bolum" disabled class="form-control" />
+		</div>
+		<button type="submit" class="btn btn-primary" style="width:150px">Sil</button>
+		<a asp-controller="Ogrenci" asp-action="Index" class="btn btn-secondary" style="width:150px">
+			Geri Dön
+		</a>
+	</div>
+</form>

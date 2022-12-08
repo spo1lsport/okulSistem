@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Party!</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h1>
+                Hoşgeldiniz.</h1>
+                    <br />
+        </div>
+        <h3><a asp-controller="Ders" asp-action="DersSayfa" class=" btn btn-primary">Ders</a></h3>
+        <h3><a asp-controller="Ogrenci" asp-action="Index" class=" btn btn-primary">Ogrenci</a></h3>
+        <h3><a asp-controller="OgrenciDers" asp-action="Index" class=" btn btn-primary">Ogrenci DERS</a></h3>
+        <h3><a asp-controller="OkulYonetim" asp-action="Index" class=" btn btn-primary">YONETİM</a></h3>
+    </div>
+</body>
+</html>

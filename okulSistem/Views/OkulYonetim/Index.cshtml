@@ -1,0 +1,71 @@
+﻿@model IEnumerable<OkulYonetim>
+@{
+    ViewData["Title"] = "Index";
+}
+
+@if (TempData["success"] != null)
+{
+    <h2>@TempData["success"]</h2>
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RsvpForm</title>
+</head>
+<body>
+    <div class="container p-3">
+        <div class="row pt-4">
+            <div class="col-6 text-end">
+                <a asp-controller="OkulYonetim" asp-action="Create" class="btn btn-primary">
+                    Yeni oluştur
+                </a>
+            </div>
+        </div>
+        <table class="table table-bordered table-striped" style="width:%100">
+            <thead>
+                <tr>
+                    <th>
+                        AD SOYAD
+                    </th>
+                    <th>
+                        GÖREV
+                    </th>
+                    <th>
+                        YÖNETİM TİP
+                    </th>
+                    <th>
+
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var obj in Model)
+                {
+                    <tr>
+                        <td>
+                            @obj.AdSoyad
+                        </td>
+                        <td>
+                            @obj.Gorevi
+                        </td>
+                        <td>
+                            @obj.YonetimTip
+                        </td>
+                        <td>
+                            <div class="w-75 btn-group" role="group">
+                                <a asp-controller="OkulYonetim" asp-action="Edit" class=" btn btn-primary" asp-route-id="@obj.Id"> Güncelle</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="w-75 btn-group" role="group">
+                                <a asp-controller="OkulYonetim" asp-action="Delete" class=" btn btn-primary" asp-route-id="@obj.Id"> Sil</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

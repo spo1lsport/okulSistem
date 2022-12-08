@@ -1,0 +1,27 @@
+﻿@model OgrenciDers
+
+<form method="post">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Öğrenciye Ders Ekle</h2>
+			<hr />
+		</div>
+		@*<div asp-validation-summary="All"></div>*@
+		<div class="mb-3">
+			<label asp-for="DersId"></label>
+			<input asp-for="DersId" class="form-control" />
+			@*<select asp-for="DersId" class="form-control" asp-items="@ViewBag.dgr"></select>*@
+			@*@Html.DropDownListFor(m=>m.DersId,(List<SelectListItem>)ViewBag.dgr,new {@class = "form-control"})*@
+			<span asp-validation-for="DersId" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="OgrenciId"></label>
+			<input asp-for="OgrenciId" class="form-control" />
+			<span asp-validation-for="OgrenciId" class="text-danger"></span>
+		</div>
+		<button type="submit" class="btn btn-primary" style="width:150px">Oluştur</button>
+		<a asp-controller="OgrenciDers" asp-action="Index" class="btn btn-secondary" style="width:150px">
+			Geri Dön
+		</a>
+	</div>
+</form>
